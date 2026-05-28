@@ -1,1 +1,27 @@
-<p>ejercicio1</p>
+<div class="contenedor">
+    <div class="formulario">
+        <h2>Laboratorio Angular - Cálculo de notas</h2>
+        <p>Ingrese cuatro notas y presione procesar.</p>
+        <input type="text" [value]="nota1" (input)="validarNota($event, 'nota1')">
+        <input type="text" [value]="nota2" (input)="validarNota($event, 'nota2')">
+        <input type="text" [value]="nota3" (input)="validarNota($event, 'nota3')">
+        <input type="text" [value]="nota4" (input)="validarNota($event, 'nota4')">
+
+        <div class="botones">
+            <button (click)="procesar()">Procesar</button>
+            <button class="limpiar" (click)="limpiar()">Limpiar</button>
+        </div>
+    </div>
+
+    <div class="resultados">
+        <h3>Resultados</h3>
+
+        <p>Suma: <strong>{{ suma }}</strong></p>
+        <p>Resta: <strong>{{ resta }}</strong></p>
+        <p>Multiplicación: <strong>{{ multiplicacion }}</strong></p>
+        <p>Promedio: <strong>{{ promedio }}</strong></p>
+        <p>Estado: <strong>{{ estado }}</strong></p>
+        <p>Promedio sin menor nota: <strong>{{ promedioSinMenor }}</strong></p>
+        
+    </div>
+</div>

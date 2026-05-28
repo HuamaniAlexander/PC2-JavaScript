@@ -62,6 +62,9 @@ export class Alumnos {
     this.nuevoNombre = '';
   }
 
-  
+  validarCondicion(nota1: number, nota2: number): string {
+    const promedio = this.calcularPromedio(nota1, nota2);
+    return promedio >= 13 ? 'Aprobado' : 'Desaprobado';
+  }
 }
 
