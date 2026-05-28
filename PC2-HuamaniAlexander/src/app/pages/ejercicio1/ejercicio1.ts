@@ -15,11 +15,9 @@ export class Ejercicio1 {
   nota4: number = 0;
 
   suma: number = 0;
-  resta: number = 0;
-  multiplicacion: number = 0;
   promedio: number = 0;
-  promedioSinMenor: number = 0;
   estado: string = '';
+  observacion: string = '';
 
   validarNota(event: Event, campo: 'nota1' | 'nota2' | 'nota3' | 'nota4') {
     const input = event.target as HTMLInputElement;
@@ -67,14 +65,18 @@ export class Ejercicio1 {
     const notas = [this.nota1, this.nota2, this.nota3, this.nota4];
 
     this.suma = this.nota1 + this.nota2 + this.nota3 + this.nota4;
-    this.resta = this.nota1 - this.nota2 - this.nota3 - this.nota4;
-    this.multiplicacion = this.nota1 * this.nota2 * this.nota3 * this.nota4;
     this.promedio = this.suma / 4;
 
-    const menor = Math.min(...notas);
-    this.promedioSinMenor = (this.suma - menor) / 3;
-
-    this.estado = this.promedio >= 11 ? 'Aprobado' : 'Desaprobado';
+    this.estado = this.promedio >= 13 ? 'Aprobado' : 'Desaprobado';
+    if(this.promedio >=17){
+      this.observacion = 'Excelente'
+    }
+    if(this.promedio < 17 && this.promedio >=13){
+      this.observacion = 'Regular'
+    }
+    if(this.promedio < 13){
+      this.observacion = 'En riesgo'
+    }
   }
 
   limpiar() {
@@ -84,10 +86,8 @@ export class Ejercicio1 {
     this.nota4 = 0;
 
     this.suma = 0;
-    this.resta = 0;
-    this.multiplicacion = 0;
     this.promedio = 0;
-    this.promedioSinMenor = 0;
     this.estado = '';
+    this.observacion = '';
   }
 }
