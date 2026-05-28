@@ -8,9 +8,9 @@
     <label>Correo</label>
     <input type="email" name="correo" [(ngModel)]="correo" placeholder="Ingrese su correo" required>  
     <label>Altura</label>
-    <input type="number" [(ngModel)]="altura" max="400" placeholder="Ingrese su altura en metros">
+    <input type="number" [(ngModel)]="altura"max="4" placeholder="Ingrese su altura en metros">
     <label>Peso</label>
-    <input type="number" [(ngModel)]="peso" max="200" placeholder="Ingrese su peso en kg">  
+    <input type="number" [(ngModel)]="peso" min="0" max="300" placeholder="Ingrese su peso en kg">  
 
     <div class="botones">
       <button (click)="procesar()">Procesar</button>

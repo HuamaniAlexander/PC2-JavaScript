@@ -19,13 +19,29 @@ export class Ejercicio2 {
 
   validarInfoIMC(): boolean {
     if (this.altura <= 0 || this.peso <= 0) {
+      this.mensaje = 'Por favor ingrese una altura y peso validos';
       return false;
     }
     return true;
   }
 
+  validarDatosPersonales(): boolean {
+    if (!this.nombre.trim()) {
+      this.mensaje = 'Por favor ingrese un nombre valido';
+      return false;
+    }
+
+    const correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!correoRegex.test(this.correo)) {
+      this.mensaje = 'Por favor ingrese un correo valido';
+      return false;
+    }
+
+    return true;
+  }
+
   procesar() {
-    if (!this.validarInfoIMC()) {
+    if (!this.validarDatosPersonales() || !this.validarInfoIMC()) {
       this.imc = 0;
       return;
     }
@@ -52,4 +68,5 @@ export class Ejercicio2 {
     this.nombre = '';
     this.correo = '';
   }
+  
 }
