@@ -1,0 +1,32 @@
+<section class="alumnos">
+  <table>
+    <tbody>
+      <tr>
+        <th>Codigo</th>
+        <th>Nombre</th>
+        <th>N1</th>
+        <th>N2</th>
+        <th>Promedio</th>
+      </tr>
+      <tr *ngFor="let alumno of alumnos">
+        <td>{{ alumno.codigo | uppercase }}</td>
+        <td>{{ alumno.nombre | uppercase }}</td>
+        <td>{{ alumno.nota1 }}</td>
+        <td>{{ alumno.nota2 }}</td>
+        <td>{{ calcularPromedio(alumno.nota1, alumno.nota2) | number:'1.2-3' }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <pre>{{ alumnos | json }}</pre>
+<br>
+<h3>PIPES</h3>
+
+<p><strong>Recorte:</strong> {{ alumnos[1]?.nombre | slice:0:4 }}</p>
+<p><strong>Formato Título:</strong> {{ alumnos[1]?.nombre | titlecase }}</p>
+<p><strong>Minúsculas:</strong> {{ alumnos[1]?.nombre | lowercase }}</p>
+<p><strong>Porcentaje:</strong> {{ alumnos[1]?.nota1 | percent }}</p>
+<p><strong>Número:</strong> {{ alumnos[1]?.nota1 | number }}</p>
+<p><strong>Moneda:</strong> {{ alumnos[1]?.nota1 | currency }}</p>
+<!-- <p><strong>Fecha:</strong> {{ alumnos[1]?.nota1 | date }}</p> -->
+
+</section>

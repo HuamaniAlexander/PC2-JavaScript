@@ -1,0 +1,38 @@
+.navbar {
+  background-color: #111111;
+  color: #FFFFFF;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #E6003C;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #E6003C;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.menu {
+  display: flex;
+  gap: 18px;
+}
+
+.menu a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.menu a:hover {
+  color: #E6003C;
+}
+
+.activo {
+  color: #E6003C;
+  border-bottom: 2px solid #E6003C;
+}

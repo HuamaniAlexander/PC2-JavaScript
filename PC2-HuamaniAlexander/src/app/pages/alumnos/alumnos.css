@@ -1,0 +1,51 @@
+.aprobado {
+  background-color: #198754;
+}
+
+.desaprobado {
+  background-color: #dc3545;
+}
+
+/* TABLA */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* CABECERA */
+
+th {
+  background-color: #D64545;
+  color: white;
+  padding: 14px;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* CELDAS */
+
+td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+}
+
+/* EFECTO HOVER */
+
+tr:hover {
+  background-color: #f4f8fb;
+  transition: 0.3s;
+}
+
+/* FILAS PARES */
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
